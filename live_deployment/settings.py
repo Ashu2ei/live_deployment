@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = 'authentication.User'
 # Application definition
-
+#application
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
