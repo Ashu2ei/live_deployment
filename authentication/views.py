@@ -7,7 +7,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import status
 from rest_framework.response import Response
 import traceback
-
+from django.core.mail import send_mail
+from live_deployment.settings import EMAIL_HOST_USER
 class RegisterAPIView(APIView):
     serializer_class = UserRegisterSerializer
     def post(self, request, *args, **kwargs):    
@@ -41,3 +42,12 @@ class LogOutAPIView(APIView):
 
 ########################################CHANGE PASSWORD
 
+class TestingAPIView(APIView):
+    def post(self, request, format = None):
+        try:
+            send_mail(subject="all is well" ,message="aaa", from_email=EMAIL_HOST_USER , recipient_list=['ashutoshmishra333@gmail.com'],
+            fail_silently=False,
+        )
+            return Response({'status':'Successfully'},status = status.HTTP_200_OK)
+        except Exception as e:
+            return Response(str(e))

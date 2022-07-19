@@ -11,6 +11,6 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/register/', RegisterAPIView.as_view()),
     path('api/logout/', LogOutAPIView.as_view(), name = 'logout_view'),
-    #path('api/testing/', TestingAPIView.as_view(), name = 'TestingAPIView'),
+    path('api/testing/', TestingAPIView.as_view(), name = 'TestingAPIView'),
 
 ]
