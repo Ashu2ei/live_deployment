@@ -25,8 +25,6 @@ class RegisterAPIView(APIView):
         except Exception as e:
             traceback.print_exc()
             return Response({'status':'ERROR','message':str(e)})
-#my_env/lib/python3.8/site-packages/gunicorn
-
 class LogOutAPIView(APIView):
     def post(self, request, format = None):
         # token = request.META['HTTP_AUTHORIZATION'].split(' ')[1]#SPLIT THE TOKEN WITH SPACE AND PICK UP THE TOKEN FROM 1ST INDEX
